@@ -1,0 +1,60 @@
+[build]
+  publish = "public"
+  functions = "netlify/functions"
+
+# API redirects - map /api/* to functions
+[[redirects]]
+  from = "/api/teacher/register"
+  to = "/.netlify/functions/teacher-register"
+  status = 200
+
+[[redirects]]
+  from = "/api/teacher/login"
+  to = "/.netlify/functions/teacher-login"
+  status = 200
+
+[[redirects]]
+  from = "/api/teacher/classes"
+  to = "/.netlify/functions/teacher-classes"
+  status = 200
+
+[[redirects]]
+  from = "/api/teacher/class"
+  to = "/.netlify/functions/teacher-class"
+  status = 200
+
+[[redirects]]
+  from = "/api/teacher/poll"
+  to = "/.netlify/functions/teacher-poll"
+  status = 200
+
+[[redirects]]
+  from = "/api/teacher/poll/:pollId/results"
+  to = "/.netlify/functions/teacher-poll-results"
+  status = 200
+
+[[redirects]]
+  from = "/api/teacher/poll/:pollId/stop"
+  to = "/.netlify/functions/teacher-poll-stop"
+  status = 200
+
+[[redirects]]
+  from = "/api/teacher/poll/:pollId/reset"
+  to = "/.netlify/functions/teacher-poll-reset"
+  status = 200
+
+[[redirects]]
+  from = "/api/class/:code"
+  to = "/.netlify/functions/class"
+  status = 200
+
+[[redirects]]
+  from = "/api/vote"
+  to = "/.netlify/functions/vote"
+  status = 200
+
+# Catch-all redirect for client-side routing
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
